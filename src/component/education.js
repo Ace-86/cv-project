@@ -9,6 +9,11 @@ class Education extends Component {
     return (
       <div>
         <h3>{this.props.title}</h3>
+        <ul>
+        <li>School Name</li>
+        <li>Title of Studies</li> 
+        <li>Date of Study</li> 
+        </ul>
       </div>
     );
   }
