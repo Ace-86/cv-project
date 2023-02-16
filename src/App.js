@@ -1,16 +1,17 @@
 import React, { Component } from "react";
-import Education from "./component/education";
-import GeneralInfo from "./component/genInfo";
-import Experience from "./component/practicalExp";
-
+// import Education from "./component/education";
+// import GeneralInfo from "./component/genInfo";
+// import Experience from "./component/practicalExp";
+import ResumeForm from "./component/Form/cvForm";
 class App extends Component {
   render() {
     return (<div>CV : Resume Creator
      
           <h1> YESS</h1>
-          <GeneralInfo title="General Info" />
+          <ResumeForm />
+          {/* <GeneralInfo title="General Info" />
           <Education title="Education" />
-          <Experience title="Work Experience" />
+          <Experience title="Work Experience" /> */}
           </div>
     )
   }

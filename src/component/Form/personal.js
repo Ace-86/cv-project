@@ -1,5 +1,5 @@
 import React from "react";
-
+import Input from "../Utilities/input"
 
 const Personal = ({personalInfo, onChange}) => {
     return (
@@ -35,15 +35,7 @@ const Personal = ({personalInfo, onChange}) => {
         placeholder="Email"
         value={personalInfo.email}
         />
-        <Input
-        onChange={(e) => onChange(e)}
-        type="text"
-        name="address"
-        placeholder="Address"
-        value={personalInfo.address}
-        />
-
-
         </Section>
     )
 }
+
