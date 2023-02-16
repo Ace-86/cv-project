@@ -2,7 +2,7 @@ import React from "react";
 
 
 //create input box for cv form to be used
-const Input = ({ type, name, placeholder, obChange, value }) => {
+const Input = ({ type, name, placeholder, onChange, value }) => {
     return (
         <InputWrapper
             onChange={onChange}
