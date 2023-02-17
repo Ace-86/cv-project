@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { Text, View, StyleSheet, TextInput, Button} from 'react-native';
+import { Text, View, StyleSheet, TextInput} from 'react-native';
 
 export default function ResumeForm({ navigation}) {
     const [ userDetails, setUserDetails] = useState({
