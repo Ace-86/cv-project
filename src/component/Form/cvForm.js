@@ -1,6 +1,6 @@
 import * as React from 'react';
+import { useState } from 'react';
 import { Text, View, StyleSheet, TextInput, Button} from 'react-native';
-import { useState } from 'react'
 
 export default function ResumeForm({ navigation}) {
     const [ userDetails, setUserDetails] = useState({
@@ -10,18 +10,18 @@ export default function ResumeForm({ navigation}) {
         phone: ''
     })
     return (
-       <View style={StyleSheet.container}>
-       <View style={StyleSheet.header}>
-            <Text style={StyleSheet.headerText}>
+       <View style={styles.container}>
+       <View style={styles.header}>
+            <Text style={styles.headerText}>
                 Resume
             </Text>
         </View>
-        <View style={StyleSheet.details}>
-            <Text style={StyleSheet.titleText}>
+        <View style={styles.details}>
+            <Text style={styles.titleText}>
                 Personal Details
             </Text>
             <TextInput
-            style={StyleSheet.textinput}
+            style={styles.textinput}
             placeholder="Enter First Name"
             value={userDetails.firstName}
             onChangeText={(e) => {
@@ -32,7 +32,7 @@ export default function ResumeForm({ navigation}) {
             }}
             />
              <TextInput
-            style={StyleSheet.textinput}
+            style={styles.textinput}
             placeholder="Enter Last Name"
             value={userDetails.lastName}
             onChangeText={(e) => {
@@ -43,7 +43,7 @@ export default function ResumeForm({ navigation}) {
             }}
             />
              <TextInput
-            style={StyleSheet.textinput}
+            style={styles.textinput}
             placeholder="Enter Email"
             value={userDetails.email}
             onChangeText={(e) => {
@@ -54,7 +54,7 @@ export default function ResumeForm({ navigation}) {
             }}
             />
              <TextInput
-            style={StyleSheet.textinput}
+            style={styles.textinput}
             placeholder="Enter Phone Number"
             value={userDetails.phone}
             onChangeText={(e) => {
@@ -64,21 +64,21 @@ export default function ResumeForm({ navigation}) {
                 }))
             }}
             />
-            <Button
+            <button
                 title="Create"
-                style={styles.button}
+                style={styles.buttons}
                 onPress={() => navigation.navigate('ShowCV', userDetails)}
-                >
-                </Button>
+                > Create
+                </button>
         </View>
     </View>
     )
 }
 
 const styles = StyleSheet.create({
-    cont: {
+    container: {
         flex: 1,
-        backgroundColor: 'blue',
+        backgroundColor: '#36485f',
         paddingLeft: 40,
         paddingRight: 40,
         paddingTop:40
@@ -105,18 +105,22 @@ const styles = StyleSheet.create({
     },
     textinput: {
         alignSelf: 'stretch',
+        width: 200,
         height:40,
-        color: '#d3d3d3',
+        backgroundColor: 'white',
+        color: 'black',
         marginBottom: 20,
         borderBottomColor: '#f8f8f8',
         borderBottomWidth: 1
     },
-    button: {
+    buttons: {
         alignSelf: 'stretch',
         alignItems: 'center',
         padding: 10,
-        backgroundColor: '#59cbbd',
+        width: 150,
+        backgroundColor: 'blue',
+        color: 'white',
         marginTop: 5,
         marginBottom: 20,
     }
-})
+});
