@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-// import Education from "./component/education";
-// import GeneralInfo from "./component/genInfo";
-// import Experience from "./component/practicalExp";
+// import * as React from 'react';
 import ResumeForm from "./component/Form/cvForm";
+import Display from "./component/Form/Display";
+import { NavigationContainer } from "@react-navigation/native"
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
 class App extends Component {
   render() {
     return (<div>
@@ -14,3 +15,5 @@ class App extends Component {
 }
 
 export default App
+
+
