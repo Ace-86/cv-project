@@ -5,13 +5,9 @@ import React, { Component } from "react";
 import ResumeForm from "./component/Form/cvForm";
 class App extends Component {
   render() {
-    return (<div>CV : Resume Creator
-     
-          <h1> YESS</h1>
+    return (<div>
+          <h1>CV : Resume Creator</h1>
           <ResumeForm />
-          {/* <GeneralInfo title="General Info" />
-          <Education title="Education" />
-          <Experience title="Work Experience" /> */}
           </div>
     )
   }
