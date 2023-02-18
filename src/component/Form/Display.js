@@ -6,23 +6,23 @@ export default function Display({ route }) {
     let dataObj = route.params
 
     return (
-        <View style={ styles.container}>
-            <View style= {styles.header}>
-                <Text style={styles.headerText}>
+        <View style={ styless.container}>
+            <View style= {styless.header}>
+                <Text style={styless.headerText}>
                     Your Resume
                 </Text>
             </View>
-        <View style={styles.details}>
-            <Text style={styles.titleText}>
+        <View style={styless.details}>
+            <Text style={styless.titleText}>
                 Personal Details
             </Text>
-            <Text style={styles.text}>
-                <Text style={styles.key}> First Name : </Text>
+            <Text style={styless.text}>
+                <Text style={styless.key}> First Name : </Text>
                 <Text> {dataObj.firstName}</Text>
             </Text>
 
-            <Text style={styles.text}>
-                <Text style={styles.key}> Last Name: </Text>
+            <Text style={styless.text}>
+                <Text style={styless.key}> Last Name: </Text>
                 <Text> {dataObj.lastName}</Text>
             </Text>
         </View>
@@ -30,7 +30,7 @@ export default function Display({ route }) {
     )
 }
 
-const styles = StyleSheet.create({
+const styless = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'grey',
