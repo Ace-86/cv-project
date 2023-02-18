@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { Text, View, StyleSheet, TextInput} from 'react-native';
+import { Text, View, StyleSheet, TextInput, Button} from 'react-native';
 
 export default function ResumeForm({ navigation}) {
     const [ userDetails, setUserDetails] = useState({
@@ -63,13 +63,28 @@ export default function ResumeForm({ navigation}) {
 
                 }))
             }}
+
+            <Text style={styles.titleText}>
+            School Experience
+        </Text>
+        <TextInput
+        style={styles.textinput}
+        placeholder="Enter First Name"
+        value={userDetails.firstName}
+        onChangeText={(e) => {
+            setUserDetails(userDetails => ({
+                ...userDetails, ...{'firstName':e}
+
+            }))
+        }}
+
             />
-            <button
+            <Button
                 title="Create"
                 style={styles.buttons}
                 onPress={() => navigation.navigate('ShowCV', userDetails)}
                 > Create
-                </button>
+                </Button>
         </View>
     </View>
     )
