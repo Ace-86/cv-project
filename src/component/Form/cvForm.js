@@ -11,6 +11,10 @@ export default function ResumeForm({ navigation}) {
         school: '',
         degree: '',
         dateOfStudy: '',
+        company: '',
+        position: '',
+        jobTask: '',
+        workDates: ''
     })
     return (
        <View style={styles.container}>
@@ -100,6 +104,54 @@ export default function ResumeForm({ navigation}) {
         onChangeText={(e) => {
             setUserDetails(userDetails => ({
                 ...userDetails, ...{'dateOfStudy':e}
+            }))
+        }}
+        />
+
+        <Text style={styles.titleText}>
+        Work Experience
+        </Text>
+
+        <TextInput
+        style={styles.textinput}
+        placeholder="Company Name"
+        value={userDetails.company}
+        onChangeText={(e) => {
+            setUserDetails(userDetails => ({
+                ...userDetails, ...{'company':e}
+            }))
+        }}
+        />
+
+<TextInput
+        style={styles.textinput}
+        placeholder="Position"
+        value={userDetails.position}
+        onChangeText={(e) => {
+            setUserDetails(userDetails => ({
+                ...userDetails, ...{'position':e}
+            }))
+        }}
+        />
+
+<TextInput
+        style={styles.textinput}
+        placeholder="Job Task"
+        value={userDetails.jobTask}
+        onChangeText={(e) => {
+            setUserDetails(userDetails => ({
+                ...userDetails, ...{'jobTask':e}
+            }))
+        }}
+        />
+
+<TextInput
+        style={styles.textinput}
+        placeholder="Dates of Employment"
+        value={userDetails.workDates}
+        onChangeText={(e) => {
+            setUserDetails(userDetails => ({
+                ...userDetails, ...{'workDates':e}
             }))
         }}
         />
