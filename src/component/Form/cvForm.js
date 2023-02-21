@@ -8,7 +8,9 @@ export default function ResumeForm({ navigation}) {
         lastName: '',
         email: '',
         phone: '',
-        school: ''
+        school: '',
+        degree: '',
+        dateOfStudy: '',
     })
     return (
        <View style={styles.container}>
@@ -78,10 +80,29 @@ export default function ResumeForm({ navigation}) {
         onChangeText={(e) => {
             setUserDetails(userDetails => ({
                 ...userDetails, ...{'school':e}
-
             }))
         }}
-            />
+        />
+          <TextInput
+        style={styles.textinput}
+        placeholder="Degree"
+        value={userDetails.degree}
+        onChangeText={(e) => {
+            setUserDetails(userDetails => ({
+                ...userDetails, ...{'degree':e}
+            }))
+        }}
+        />
+          <TextInput
+        style={styles.textinput}
+        placeholder="School Dates"
+        value={userDetails.dateOfStudy}
+        onChangeText={(e) => {
+            setUserDetails(userDetails => ({
+                ...userDetails, ...{'dateOfStudy':e}
+            }))
+        }}
+        />
             <Button
                 title="Create"
                 style={styles.buttons}
