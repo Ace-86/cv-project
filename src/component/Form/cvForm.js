@@ -7,7 +7,8 @@ export default function ResumeForm({ navigation}) {
         firstName: '',
         lastName: '',
         email: '',
-        phone: ''
+        phone: '',
+        school: ''
     })
     return (
        <View style={styles.container}>
@@ -16,6 +17,7 @@ export default function ResumeForm({ navigation}) {
                 Resume
             </Text>
         </View>
+        
         <View style={styles.details}>
             <Text style={styles.titleText}>
                 Personal Details
@@ -63,21 +65,22 @@ export default function ResumeForm({ navigation}) {
 
                 }))
             }}
+            />
 
-            <Text style={styles.titleText}>
-            School Experience
+        <Text style={styles.titleText}>
+        School Experience
         </Text>
+
         <TextInput
         style={styles.textinput}
-        placeholder="Enter First Name"
-        value={userDetails.firstName}
+        placeholder="School"
+        value={userDetails.school}
         onChangeText={(e) => {
             setUserDetails(userDetails => ({
-                ...userDetails, ...{'firstName':e}
+                ...userDetails, ...{'school':e}
 
             }))
         }}
-
             />
             <Button
                 title="Create"
