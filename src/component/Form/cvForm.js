@@ -2,20 +2,38 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Text, View, StyleSheet, TextInput, Button} from 'react-native';
 
-export default function ResumeForm({ navigation}) {
-    const [ userDetails, setUserDetails] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        school: '',
-        degree: '',
-        dateOfStudy: '',
-        company: '',
-        position: '',
-        jobTask: '',
-        workDates: ''
-    })
+
+export default function App() {
+// export default function ResumeForm({ navigation}) {
+    // const [ userDetails, setUserDetails] = useState({
+    //     firstName: '',
+    //     lastName: '',
+    //     email: '',
+    //     phone: '',
+    //     school: '',
+    //     degree: '',
+    //     dateOfStudy: '',
+    //     company: '',
+    //     position: '',
+    //     jobTask: '',
+    //     workDates: ''
+    // })
+
+    const [message, setMessage] = useState({
+        firstName: ''
+    });
+    //object is causing error; possiblly due to onChange vs onChangeText
+
+    const [updated, setUpdated] = useState(message);
+
+    // const handleChange = (event) => {
+    //     setMessage(event.target.value);
+    // };
+
+    const handleClick = () => {
+        setUpdated(message);
+    };
+
     return (
        <View style={styles.container}>
        <View style={styles.header}>
@@ -30,16 +48,21 @@ export default function ResumeForm({ navigation}) {
             </Text>
             <TextInput
             style={styles.textinput}
+            id = "message"
+            name = "message"
+            type= "text"
             placeholder="Enter First Name"
-            value={userDetails.firstName}
-            onChangeText={(e) => {
-                setUserDetails(userDetails => ({
-                    ...userDetails, ...{'firstName':e}
-
+            // onChange = {handleChange}
+            value={message}
+            
+            onChange={(event) => {
+                setMessage(message => ({
+                    ...message, ...{'firstName': event}
                 }))
             }}
+            
             />
-             <TextInput
+             {/* <TextInput
             style={styles.textinput}
             placeholder="Enter Last Name"
             value={userDetails.lastName}
@@ -154,13 +177,17 @@ export default function ResumeForm({ navigation}) {
                 ...userDetails, ...{'workDates':e}
             }))
         }}
-        />
-            <Button
+        /> */}
+
+        <h2> Message: {message} </h2>
+        <h1> Updated: {updated} </h1>
+            <button
                 title="Create"
                 style={styles.buttons}
-                onPress={() => navigation.navigate('ShowCV', userDetails)}
+                onClick = {handleClick}
+                // onPress={() => navigation.navigate('ShowCV', userDetails)}
                 > Create
-                </Button>
+                </button>
         </View>
     </View>
     )
