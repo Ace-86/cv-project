@@ -1,47 +1,66 @@
-import React, { Component } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
+import { Text, View, StyleSheet, TextInput, Button, input} from 'react-native';
 
-class Experience extends Component {
-  constructor(props) {
-    super(props);
-  }
+// export default function App() {
+  export default function Personal() {
+const [state, setState] = useState({ fName: "", lName: "" });
+        
+const handleChange = e => {
+            const { name, value } = e.target;
+            setState(prevState => ({
+                ...prevState,
+                [name]: value
+            }));
+        };
+        const [updated, setUpdated] = useState(state);
+        
+        const handleClick = (e) => {
+        e.preventDefault();
+          setUpdated(state)
+          console.log('Hey')
+       };
+      
 
-  render() {
-    return (
-      <div>
-        <h3>{this.props.title}</h3>
-        <ul>
-            <li> Company Name</li>
-            <li> Position Title</li>
-            <ul> Job Task
-                <l1>A</l1>
-                <li>B</li>
-                <li>C</li>
-            </ul>
-            <li> Date of Employment</li>
-        </ul>
-      </div>
-    );
-  }
-}
+        return (
+            <View>
+        <input
+            value={state.fName}
+            type="text"
+            onChange={handleChange}
+            name="fName"
+        />
+        <input
+            value={state.lName}
+            type="text"
+            onChange={handleChange}
+            name="lName"
+        />
 
-export default Experience;
+        <h2> Message: {state.fName} </h2>
+        <h1> Updated: {setUpdated.fName} </h1>
+            
+            <button
+                title="Create"
+                // style={styles.buttons}
+                onClick = {handleClick}
+                // onPress={() => navigation.navigate('ShowCV', userDetails)}
+                > Create
+                </button>
+</View>
 
-
-
-
-
-
-
-
-
-
-
-
+         )
+    }
+  
 
 
 
-// A section to add practical 
-// experience (company name, position
-// title, main tasks of your jobs, 
-// date from and until when you
-//  worked for that company)
+
+
+
+
+
+
+
+
+
