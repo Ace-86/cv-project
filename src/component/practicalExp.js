@@ -1,134 +1,118 @@
-// import * as React from 'react';
-// import { useState } from 'react';
-// import { Text, View, StyleSheet, TextInput, Button, input} from 'react-native';
+import React from "react";
+    class App extends React.Component {
+      constructor(props) {
+        super();
+        this.state = {
+          cName: "",
+          position: "",
+          tasks: "",
+          sdoe: "",
+          edoe: "",
+          data: {}
+        };
+      }
+    
+      handleChange = (e, type) => {
+        this.setState({ ...this.state, [type]: e.target.value });
+      };
+    
+      handleSubmit = (e) => {
+        e.preventDefault();
+        const { cName, position, tasks, sdoe, edoe } = this.state;
+        this.setState({
+          data: {
+            cName,
+            position,
+            tasks,
+            sdoe,
+            edoe
+          }
+        });
+        console.log(this.state);
+      };
+      render() {
 
-// // export default function App() {
-//   export default function Personal() {
-// const [state, setState] = useState({ fName: "", lName: "" });
-// const [updated, setUpdated] = useState(state);
+        return (
+          <div className="App">
+            <form onSubmit={this.handleSubmit}>
+              
+              <label>Company Name</label>
+              <input
+                type="text"
+                value={this.state.cName}
+                onChange={(e) => {
+                  this.handleChange(e, "cName");
+                }}
+                name="cName"
+              />
         
-// const handleChange = (e) => {
-//             const { name, value } = e.target;
-//             setState(prevState => ({
-//                 ...prevState,
-//                 [name]: value
-//             }));
-//         };
+              <br />
+              
+              <label>Position Title</label>
+              <input
+                type="text"
+                value={this.state.position}
+                onChange={(e) => {
+                  this.handleChange(e, "position");
+                }}
+                name="position"
+              />
         
-//         const handleClick = (e) => {
-//         e.preventDefault();
-//           setState(state)
-//           console.log('Hey')
-      
-//        };
-      
+              <br />
+             
+              <label>Job Task</label>
+              <input
+                type="tasks"
+                value={this.state.tasks}
+                onChange={(e) => {
+                  this.handleChange(e, "tasks");
+                }}
+                name="tasks"
+              />
+        
+              <br />
 
-//         return (
-//             <View>
-               
-//         <input
-//             value={state.fName}
-//             type="text"
-//             onChange={handleChange}
-//             name="fName"
-//         />
-//         <input
-//             value={state.lName}
-//             type="text"
-//             onChange={handleChange}
-//             name="lName"
-//         />
+              <label>Start Date</label>
+              <input
+                type="date"
+                value={this.state.sdoe}
+                onChange={(e) => {
+                  this.handleChange(e, "sdoe");
+                }}
+                name="sdoe"
+              />
+        
+              <br />
 
-//         <h2> Message: {state.fName} </h2>
-//         <h1> Updated: {setUpdated.fName} </h1>
+
+              <label>End Date</label>
+              <input
+                type="date"
+                value={this.state.edoe}
+                onChange={(e) => {
+                  this.handleChange(e, "edoe");
+                }}
+                name="edoe"
+              />
+               <br />
+
+              <button type="submit">Submit</button>
             
-//             <Button
-//                 title="Create"
-//                 // type="submit"
-//                 // style={styles.buttons}
-//                 onClick = {handleClick}
-//                 // onPress={() => navigation.navigate('ShowCV', userDetails)}
-//                 > Create
-//                 </Button>
-// </View>
+            </form>
+            
+            <h2>Company Name: {this.state.data.cName}</h2>
+            
+            <h2> Position Title: {this.state.data.position}</h2>
+            
+            <h2>Job Tasks: {this.state.data.tasks}</h2>
 
-//          )
-//     }
-import { useState } from 'react';
-// import './App.css';
+            <h2>Start date of employment: {this.state.data.sdoe}</h2>
 
-function App() {
-  const [inputFields, setInputFields] = useState([
-    { fname: '',
-     lname: '',
-    education: '',
-    address: '',
-    age: null,
-    submitted: false
-}
-  ])
-
-  const handleFormChange = (index, event) => {
-    let data = [...inputFields];
-    data[index][event.target.name] = event.target.value;
-    setInputFields(data);
- }
-
- const addFields = () => {
-    let newfield = { fname: '', lname: '' }
-    setInputFields([...inputFields, newfield])
-}
-
-const submit = (e) => {
-    e.preventDefault();
-    console.log(inputFields)
-}
-
-const removeFields = (index) => {
-    let data = [...inputFields];
-    data.splice(index, 1)
-    setInputFields(data)
-}
-
-  return (
-    <div className="App">
-      <form onSubmit = {submit}>
-        {inputFields.map((input, index) => {
-          return (
-            <div key={index}>
-
-              <input
-                name='fname'
-                placeholder='First Name'
-                value={input.fname}
-                onChange={event => handleFormChange(index, event)}
-              />
-              <br />
-              <input
-                name='lname'
-                placeholder='Last Name'
-                value={input.lname}
-                onChange={event => handleFormChange(index, event)}
-              />
-              <br />
-              <input
-                name='education'
-                placeholder='Education'
-                value={input.education}
-                onChange={event => handleFormChange(index, event)}
-              />
-              <br />
-              <button onClick={() => removeFields(index)}>Remove</button>
-            </div>
-          )
-        })}
-        <button onClick={addFields}>Add More..</button>
-        <button onClick={submit}>Submit</button>
-      </form>
-{/* //    <h1> Updated: {inputFields} </h1> */}
-      <h2>  {inputFields[0].fname} </h2>
-    </div>
-  );
-}
-
-export default App;
+            <h2>End date of employment: {this.state.data.edoe}</h2>
+          
+          </div>
+        );
+      }
+    }
+    
+    export default App;
