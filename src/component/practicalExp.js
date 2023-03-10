@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/style.css"
     class App extends React.Component {
       constructor(props) {
         super();
@@ -33,7 +34,7 @@ import React from "react";
       render() {
 
         return (
-          <div className="App">
+          <div className="container">
             <form onSubmit={this.handleSubmit}>
               
               <label>Company Name</label>
@@ -99,7 +100,7 @@ import React from "react";
               <button type="submit">Submit</button>
             
             </form>
-            
+            <div className= "rightColumn">
             <h2>Company Name: {this.state.data.cName}</h2>
             
             <h2> Position Title: {this.state.data.position}</h2>
@@ -109,7 +110,7 @@ import React from "react";
             <h2>Start date of employment: {this.state.data.sdoe}</h2>
 
             <h2>End date of employment: {this.state.data.edoe}</h2>
-          
+            </div>
           </div>
         );
       }
