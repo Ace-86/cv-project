@@ -7,6 +7,7 @@ import React from "react";
           fName: "",
           lName: "",
           email: "",
+          phone: "",
           data: {}
         };
       }
