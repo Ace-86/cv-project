@@ -36,9 +36,7 @@ import "../styles/style.css"
 
 
       clearInput = (e) => {
-        e.preventDefault();
         this.setState({
-          
           cName: "",
           position: "",
           tasks: "",
@@ -46,16 +44,30 @@ import "../styles/style.css"
           edoe: ""
           
       })
-      console.log(this.state);
     }
 
-    // display = (e) => {
-    //   e.preventDefault();
-    //   this.setState (
-    //   {state.data.cName: ""})
-    //   console.log(this.state)
-    // }
+    display = () => {
+      {this.state.data.cName = ""}
+      {this.state.data.position = ""}
+      {this.state.data.tasks = ""}
+      {this.state.data.sdoe = ""}
+      {this.state.data.edoe = ""}      
+    }
 
+    clearAll = (e) => {
+      e.preventDefault();
+      this.clearInput();
+      this.display();
+      this.state = ({
+      cName: "",
+          position: "",
+          tasks: "",
+          sdoe: "",
+          edoe: "",
+          data: {}
+    });
+      console.log(this.state)
+    }
 
       render() {
 
@@ -136,33 +148,29 @@ import "../styles/style.css"
                 Submit
               </button>
               
-              <button onClick= {
-                  this.clearInput}> 
+              {/* <button onClick= {
+                  this.clearInput
+                  }> 
                   Clear
-                  </button>
-
+                  </button> */}
 
               <button 
-              type="reset"
               onClick = {
-                this.display}>
-              erase
+                this.clearAll}>
+              Clear All
               </button>
+
             
             </form>
 
             <div className= "rightcolumn">
             <h2>Company Name: {this.state.data.cName}</h2>
-            
             <h2> Position Title: {this.state.data.position}</h2>
-            
             <h2>Job Tasks: {this.state.data.tasks}</h2>
-
             <h2>Start date of employment: {this.state.data.sdoe}</h2>
-
             <h2>End date of employment: {this.state.data.edoe}</h2>
-        
             </div>
+          
           </div>
         );
       }
