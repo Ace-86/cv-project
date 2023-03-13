@@ -36,7 +36,8 @@ import "../styles/style.css"
         return (
           <div className="container">
             <form onSubmit={this.handleSubmit}>
-              
+
+            <div className="leftcolumn"> 
               <label>Company Name</label>
               <input
                 type="text"
@@ -96,11 +97,12 @@ import "../styles/style.css"
                 name="edoe"
               />
                <br />
+               </div>
 
               <button type="submit">Submit</button>
             
             </form>
-            <div className= "rightColumn">
+            <div className= "rightcolumn">
             <h2>Company Name: {this.state.data.cName}</h2>
             
             <h2> Position Title: {this.state.data.position}</h2>
@@ -110,6 +112,7 @@ import "../styles/style.css"
             <h2>Start date of employment: {this.state.data.sdoe}</h2>
 
             <h2>End date of employment: {this.state.data.edoe}</h2>
+        
             </div>
           </div>
         );
