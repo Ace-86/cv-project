@@ -142,11 +142,7 @@ import "../styles/style.css"
                <br />
                </div>
               
-              <button 
-              onClick={this.handleSubmit}
-              type="submit">
-                Submit
-              </button>
+              <button onClick={this.handleSubmit} type="submit">Submit</button>
               
               {/* <button onClick= {
                   this.clearInput
@@ -154,11 +150,7 @@ import "../styles/style.css"
                   Clear
                   </button> */}
 
-              <button 
-              onClick = {
-                this.clearAll}>
-              Clear All
-              </button>
+              <button onClick = {this.clearAll}>Clear All</button>
 
             
             </form>
