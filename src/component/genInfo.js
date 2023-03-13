@@ -38,6 +38,7 @@ import React from "react";
             <div className="leftcolumn">
               <label>First Name</label>
               <input
+                className="formInput"
                 type="text"
                 value={this.state.fName}
                 onChange={(e) => {
@@ -50,6 +51,7 @@ import React from "react";
               
               <label>Last Name</label>
               <input
+                className="formInput"
                 type="text"
                 value={this.state.lName}
                 onChange={(e) => {
@@ -62,6 +64,7 @@ import React from "react";
              
               <label>Email</label>
               <input
+                className="formInput"
                 type="email"
                 value={this.state.email}
                 onChange={(e) => {
@@ -74,6 +77,7 @@ import React from "react";
 
               <label>Phone</label>
               <input
+                className="formInput"
                 type="number"
                 value={this.state.phone}
                 onChange={(e) => {
@@ -85,7 +89,7 @@ import React from "react";
               <br />
               </div>
               <button type="submit">Submit</button>
-            
+
             </form>
             <div className= "rightcolumn">
             <h2>First Name: {this.state.data.fName}</h2>
