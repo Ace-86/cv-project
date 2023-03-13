@@ -36,6 +36,7 @@ import React from "react";
             <div className="leftcolumn">  
               <label>School Name</label>
               <input
+                className="formInput"
                 type="text"
                 value={this.state.sName}
                 onChange={(e) => {
@@ -48,6 +49,7 @@ import React from "react";
               
               <label>Degree</label>
               <input
+                className="formInput"
                 type="text"
                 value={this.state.degree}
                 onChange={(e) => {
@@ -60,6 +62,7 @@ import React from "react";
              
               <label>Start Date</label>
               <input
+                className="formInput"
                 type="sDate"
                 value={this.state.sDate}
                 onChange={(e) => {
@@ -72,6 +75,7 @@ import React from "react";
 
               <label>End Date</label>
               <input
+                className="formInput"
                 type="number"
                 value={this.state.eDate}
                 onChange={(e) => {
