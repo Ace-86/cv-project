@@ -29,12 +29,43 @@ import React from "react";
         });
         console.log(this.state);
       };
+
+
+      clearInput = (e) => {
+        this.setState({
+          fName: "",
+          lName: "",
+          email: "",
+          phone: "",
+      })
+    }
+
+    display = () => {
+      {this.state.data.fName = ""}
+      {this.state.data.lNAme = ""}
+      {this.state.data.email = ""}
+      {this.state.data.phone = ""}
+    }
+
+    clearAll = (e) => {
+      e.preventDefault();
+      this.clearInput();
+      this.display();
+      this.state = ({
+        fName: "",
+        lNAme: "",
+        email: "",
+        phone: "",
+        data: {}
+    });
+      console.log(this.state)
+    }
+      
       render() {
 
         return (
           <div className="container">
             <form onSubmit={this.handleSubmit}>
-              
             <div className="leftcolumn">
               <label>First Name</label>
               <input
@@ -46,7 +77,6 @@ import React from "react";
                 }}
                 name="fName"
               />
-        
               <br />
               
               <label>Last Name</label>
@@ -59,9 +89,8 @@ import React from "react";
                 }}
                 name="lName"
               />
-        
               <br />
-             
+
               <label>Email</label>
               <input
                 className="formInput"
@@ -72,7 +101,6 @@ import React from "react";
                 }}
                 name="email"
               />
-        
               <br />
 
               <label>Phone</label>
@@ -84,22 +112,21 @@ import React from "react";
                   this.handleChange(e, "phone");
                 }}
                 name="phone"
-              />
-        
+              />        
               <br />
-              </div>
-              <button type="submit">Submit</button>
+            </div>
 
-            </form>
+            <button type="submit">Submit</button>
+            <button onClick = {this.clearAll}> Clear All</button>
+
+          </form>
             <div className= "rightcolumn">
-            <h2>First Name: {this.state.data.fName}</h2>
-            
-            <h2>Last Name: {this.state.data.lName}</h2>
-            
-            <h2>Email: {this.state.data.email}</h2>
-
-            <h2>Phone #: {this.state.data.phone}</h2>
+              <h2>First Name: {this.state.data.fName}</h2>
+              <h2>Last Name: {this.state.data.lName}</h2>
+              <h2>Email: {this.state.data.email}</h2>
+              <h2>Phone #: {this.state.data.phone}</h2>
           </div>
+
           </div>
         );
       }
