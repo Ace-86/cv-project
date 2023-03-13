@@ -40,6 +40,7 @@ import "../styles/style.css"
             <div className="leftcolumn"> 
               <label>Company Name</label>
               <input
+                className="formInput"
                 type="text"
                 value={this.state.cName}
                 onChange={(e) => {
@@ -52,6 +53,7 @@ import "../styles/style.css"
               
               <label>Position Title</label>
               <input
+                className="formInput"
                 type="text"
                 value={this.state.position}
                 onChange={(e) => {
@@ -64,6 +66,7 @@ import "../styles/style.css"
              
               <label>Job Task</label>
               <input
+                className="formInput"
                 type="tasks"
                 value={this.state.tasks}
                 onChange={(e) => {
@@ -76,6 +79,7 @@ import "../styles/style.css"
 
               <label>Start Date</label>
               <input
+                className="formInput"
                 type="date"
                 value={this.state.sdoe}
                 onChange={(e) => {
@@ -89,6 +93,7 @@ import "../styles/style.css"
 
               <label>End Date</label>
               <input
+                className="formInput"
                 type="date"
                 value={this.state.edoe}
                 onChange={(e) => {
@@ -98,10 +103,9 @@ import "../styles/style.css"
               />
                <br />
                </div>
-
               <button type="submit">Submit</button>
-            
             </form>
+
             <div className= "rightcolumn">
             <h2>Company Name: {this.state.data.cName}</h2>
             
