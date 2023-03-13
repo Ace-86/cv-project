@@ -28,11 +28,44 @@ import React from "react";
         });
         console.log(this.state);
       };
+
+
+      clearInput = (e) => {
+        this.setState({
+          sName: "",
+          degree: "",
+          sDate: "",
+          eDate: "",
+      })
+    }
+
+    display = () => {
+      {this.state.data.sName = ""}
+      {this.state.data.degree = ""}
+      {this.state.data.sDate = ""}
+      {this.state.data.eDate = ""}
+    }
+
+    clearAll = (e) => {
+      e.preventDefault();
+      this.clearInput();
+      this.display();
+      this.state = ({
+        sName: "",
+        degree: "",
+        sDate: "",
+        eDate: "",
+        data: {}
+    });
+      console.log(this.state)
+    }
+
       render() {
 
         return (
           <div className="container">
             <form onSubmit={this.handleSubmit}>
+        
             <div className="leftcolumn">  
               <label>School Name</label>
               <input
@@ -86,18 +119,21 @@ import React from "react";
         
               <br />
              </div> 
+              
               <button type="submit">Submit</button>
+              <button onClick = {this.clearAll}>Clear All</button>
             
             </form>
-            <div className= "rightcolumn">
-            <h2>School Name: {this.state.data.sName}</h2>
-            
-            <h2>Degree: {this.state.data.degree}</h2>
-            
-            <h2>Start Date: {this.state.data.sDate}</h2>
 
+            <div className= "rightcolumn">
+           
+            <h2>School Name: {this.state.data.sName}</h2>
+            <h2>Degree: {this.state.data.degree}</h2>
+            <h2>Start Date: {this.state.data.sDate}</h2>
             <h2>End Date: {this.state.data.eDate}</h2>
+
           </div>
+
           </div>
         );
       }
