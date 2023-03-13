@@ -31,9 +31,9 @@ import React from "react";
       render() {
 
         return (
-          <div className="App">
+          <div className="container">
             <form onSubmit={this.handleSubmit}>
-              
+            <div className="leftcolumn">  
               <label>School Name</label>
               <input
                 type="text"
@@ -81,11 +81,11 @@ import React from "react";
               />
         
               <br />
-              
+             </div> 
               <button type="submit">Submit</button>
             
             </form>
-            
+            <div className= "rightcolumn">
             <h2>School Name: {this.state.data.sName}</h2>
             
             <h2>Degree: {this.state.data.degree}</h2>
@@ -93,7 +93,7 @@ import React from "react";
             <h2>Start Date: {this.state.data.sDate}</h2>
 
             <h2>End Date: {this.state.data.eDate}</h2>
-          
+          </div>
           </div>
         );
       }
