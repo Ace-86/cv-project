@@ -32,9 +32,10 @@ import React from "react";
       render() {
 
         return (
-          <div className="App">
+          <div className="container">
             <form onSubmit={this.handleSubmit}>
               
+            <div className="leftcolumn">
               <label>First Name</label>
               <input
                 type="text"
@@ -82,11 +83,11 @@ import React from "react";
               />
         
               <br />
-              
+              </div>
               <button type="submit">Submit</button>
             
             </form>
-            
+            <div className= "rightcolumn">
             <h2>First Name: {this.state.data.fName}</h2>
             
             <h2>Last Name: {this.state.data.lName}</h2>
@@ -94,7 +95,7 @@ import React from "react";
             <h2>Email: {this.state.data.email}</h2>
 
             <h2>Phone #: {this.state.data.phone}</h2>
-          
+          </div>
           </div>
         );
       }
