@@ -1,4 +1,18 @@
-.rightColumn {
+.container {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: bisque
-}
+ }
+ 
+ 
+ .leftcolumn {
+    grid-column: 1 /2;
+    background-color: aqua;
+ }
+ 
+ 
+ .rightcolumn {
+    grid-column: 2 / 3;
+    background-color: #00ac25
+ }
+ 
