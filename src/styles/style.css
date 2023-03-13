@@ -16,3 +16,9 @@
     background-color: #00ac25
  }
  
+ .formInput {
+    width: 30%;
+    border-color: rgb(0, 0, 0);
+    padding: 1px;
+    margin: 5px;
+ }
