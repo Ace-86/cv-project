@@ -12,7 +12,9 @@ import "../styles/style.css"
           data: {}
         };
       }
-    
+
+      
+      
       handleChange = (e, type) => {
         this.setState({ ...this.state, [type]: e.target.value });
       };
@@ -28,14 +30,38 @@ import "../styles/style.css"
             sdoe,
             edoe
           }
-        });
+        })
         console.log(this.state);
       };
+
+
+      clearInput = (e) => {
+        e.preventDefault();
+        this.setState({
+          
+          cName: "",
+          position: "",
+          tasks: "",
+          sdoe: "",
+          edoe: ""
+          
+      })
+      console.log(this.state);
+    }
+
+    // display = (e) => {
+    //   e.preventDefault();
+    //   this.setState (
+    //   {state.data.cName: ""})
+    //   console.log(this.state)
+    // }
+
+
       render() {
 
         return (
           <div className="container">
-            <form onSubmit={this.handleSubmit}>
+            <form >
 
             <div className="leftcolumn"> 
               <label>Company Name</label>
@@ -103,7 +129,26 @@ import "../styles/style.css"
               />
                <br />
                </div>
-              <button type="submit">Submit</button>
+              
+              <button 
+              onClick={this.handleSubmit}
+              type="submit">
+                Submit
+              </button>
+              
+              <button onClick= {
+                  this.clearInput}> 
+                  Clear
+                  </button>
+
+
+              <button 
+              type="reset"
+              onClick = {
+                this.display}>
+              erase
+              </button>
+            
             </form>
 
             <div className= "rightcolumn">
