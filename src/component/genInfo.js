@@ -141,9 +141,3 @@ import React from "react";
 
 
 
-
-
-
-// A section to add 
-// general information like 
-// name, lName, phone number.

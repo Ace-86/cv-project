@@ -14,7 +14,7 @@ import "../styles/style.css"
       }
 
       
-      
+      //re-usable code
       handleChange = (e, type) => {
         this.setState({ ...this.state, [type]: e.target.value });
       };
@@ -143,12 +143,7 @@ import "../styles/style.css"
                </div>
               
               <button onClick={this.handleSubmit} type="submit">Submit</button>
-              
-              {/* <button onClick= {
-                  this.clearInput
-                  }> 
-                  Clear
-                  </button> */}
+
 
               <button onClick = {this.clearAll}>Clear All</button>
 
