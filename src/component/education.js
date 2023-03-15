@@ -39,26 +39,33 @@ import React from "react";
       })
     }
 
+    //mutates states directly: fix it so that state is cloned and updated through setState
     display = () => {
-      {this.state.data.sName = ""}
-      {this.state.data.degree = ""}
-      {this.state.data.sDate = ""}
-      {this.state.data.eDate = ""}
+      this.setState (
+      { data: {
+        sName: "",
+        degree: "",
+        sDate: "",
+        eDate: ""  
+      }}
+    )
     }
 
     clearAll = (e) => {
       e.preventDefault();
       this.clearInput();
-      this.display();
-      this.state = ({
-        sName: "",
-        degree: "",
-        sDate: "",
-        eDate: "",
-        data: {}
-    });
-      console.log(this.state)
+      // this.display();
+      //mutates state directly: clone and copy through setState
+    //   this.state = ({
+    //     sName: "",
+    //     degree: "",
+    //     sDate: "",
+    //     eDate: "",
+    //     data: {}
+    // });
+    console.log(this.state);
     }
+
 
       render() {
 
@@ -122,7 +129,8 @@ import React from "react";
               
               <button type="submit">Submit</button>
               <button onClick = {this.clearAll}>Clear All</button>
-            
+              <button onClick = {this.display}>display</button>
+              
             </form>
 
             <div className= "rightcolumn">
