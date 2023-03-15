@@ -53,7 +53,7 @@ import React from "react";
       this.display();
       this.state = ({
         fName: "",
-        lNAme: "",
+        lName: "",
         email: "",
         phone: "",
         data: {}
