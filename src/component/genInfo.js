@@ -42,7 +42,7 @@ import React from "react";
 
     display = () => {
       {this.state.data.fName = ""}
-      {this.state.data.lNAme = ""}
+      {this.state.data.lName = ""}
       {this.state.data.email = ""}
       {this.state.data.phone = ""}
     }
