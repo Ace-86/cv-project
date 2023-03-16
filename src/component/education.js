@@ -40,7 +40,7 @@ import React from "react";
     }
 
     //mutates states directly: fix it so that state is cloned and updated through setState
-    display = () => {
+    cleardata = () => {
       this.setState (
       { data: {
         sName: "",
@@ -53,8 +53,8 @@ import React from "react";
 
     clearAll = (e) => {
       e.preventDefault();
+      this.cleardata();
       this.clearInput();
-      // this.display();
       //mutates state directly: clone and copy through setState
     //   this.state = ({
     //     sName: "",
@@ -129,7 +129,7 @@ import React from "react";
               
               <button type="submit">Submit</button>
               <button onClick = {this.clearAll}>Clear All</button>
-              <button onClick = {this.display}>display</button>
+              <button onClick = {this.cleardata}>cleardata</button>
               
             </form>
 
