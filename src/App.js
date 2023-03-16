@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Personal from "./component/genInfo";
 import Experience from "./component/practicalExp";
-import School from "./component/education";
+import Education from "./component/education";
 
 class App extends Component {
   render() {
@@ -12,7 +12,7 @@ class App extends Component {
           <h3> Work Experience</h3>
           <Experience />
           <h3> Education</h3>
-          <School />
+          <Education />
 
         
           </div>
