@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/style.css"
-    class App extends React.Component {
+    class Experience extends React.Component {
       constructor(props) {
         super();
         this.state = {
@@ -46,26 +46,38 @@ import "../styles/style.css"
       })
     }
 
-    display = () => {
-      {this.state.data.cName = ""}
-      {this.state.data.position = ""}
-      {this.state.data.tasks = ""}
-      {this.state.data.sdoe = ""}
-      {this.state.data.edoe = ""}      
+    cleardata = () => {
+      this.setState (
+      { data: {
+        cName: "",
+        position: "",
+        tasks: "",
+        sdoe: "",
+        edoe: "" 
+      }}
+    )
     }
+
+    // display = () => {
+    //   {this.state.data.cName = ""}
+    //   {this.state.data.position = ""}
+    //   {this.state.data.tasks = ""}
+    //   {this.state.data.sdoe = ""}
+    //   {this.state.data.edoe = ""}      
+    // }
 
     clearAll = (e) => {
       e.preventDefault();
       this.clearInput();
-      this.display();
-      this.state = ({
-      cName: "",
-          position: "",
-          tasks: "",
-          sdoe: "",
-          edoe: "",
-          data: {}
-    });
+      this.cleardata();
+      // this.state = ({
+      // cName: "",
+      //     position: "",
+      //     tasks: "",
+      //     sdoe: "",
+      //     edoe: "",
+      //     data: {}
+    // });
       console.log(this.state)
     }
 
@@ -163,4 +175,4 @@ import "../styles/style.css"
       }
     }
     
-    export default App;
+    export default Experience;
