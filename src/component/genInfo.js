@@ -40,24 +40,35 @@ import React from "react";
       })
     }
 
-    display = () => {
-      {this.state.data.fName = ""}
-      {this.state.data.lName = ""}
-      {this.state.data.email = ""}
-      {this.state.data.phone = ""}
+    cleardata = () => {
+      this.setState (
+      { data: {
+        fName: "",
+        lName: "",
+        email: "",
+        phone: ""  
+      }}
+    )
     }
+
+    // display = () => {
+    //   {this.state.data.fName = ""}
+    //   {this.state.data.lName = ""}
+    //   {this.state.data.email = ""}
+    //   {this.state.data.phone = ""}
+    // }
 
     clearAll = (e) => {
       e.preventDefault();
       this.clearInput();
-      this.display();
-      this.state = ({
-        fName: "",
-        lName: "",
-        email: "",
-        phone: "",
-        data: {}
-    });
+      this.cleardata();
+    //   this.state = ({
+    //     fName: "",
+    //     lName: "",
+    //     email: "",
+    //     phone: "",
+    //     data: {}
+    // });
       console.log(this.state)
     }
       
