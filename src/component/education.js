@@ -1,5 +1,5 @@
 import React from "react";
-    class App extends React.Component {
+    class Education extends React.Component {
       constructor(props) {
         super();
         this.state = {
@@ -147,4 +147,4 @@ import React from "react";
       }
     }
     
-    export default App;
+    export default Education;
