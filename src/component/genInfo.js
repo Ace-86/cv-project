@@ -1,6 +1,6 @@
 import React from "react";
     // import "./styles.css";
-    class App extends React.Component {
+    class Personal extends React.Component {
       constructor(props) {
         super();
         this.state = {
@@ -131,21 +131,28 @@ import React from "react";
             <button onClick = {this.clearAll}> Clear All</button>
 
           </form>
-            <div className= "rightcolumn">
-              <h2>First Name: {this.state.data.fName}</h2>
-              <h2>Last Name: {this.state.data.lName}</h2>
-              <h2>Email: {this.state.data.email}</h2>
-              <h2>Phone #: {this.state.data.phone}</h2>
-          </div>
+            
 
           </div>
         );
       }
     }
     
-    export default App;
-
-
+    
+    class Gallery extends React.Component {
+      render() {
+        return (
+          <div>
+              <h2>First Name: {this.state.data.fName}</h2>
+              <h2>Last Name: {this.state.data.lName}</h2>
+              <h2>Email: {this.state.data.email}</h2>
+              <h2>Phone #: {this.state.data.phone}</h2>
+          </div>
+      )
+    }
+  }
+  
+  export { Gallery, Personal };
 
 
 
